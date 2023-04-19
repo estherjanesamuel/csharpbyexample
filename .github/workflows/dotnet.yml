@@ -25,12 +25,9 @@ jobs:
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3.9.3
-
+    - permissions:
+      contents: write
       with:
-        
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_site
-        
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_site
 
